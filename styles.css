@@ -96,63 +96,6 @@ body {
     background: rgba(255, 255, 255, 0.2);
 }
 
-/* Burger Menu */
-.burger-menu {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    padding: 5px;
-    z-index: 1001;
-}
-
-.burger-line {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 3px 0;
-    transition: 0.3s;
-    border-radius: 2px;
-}
-
-.burger-menu.active .burger-line:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.burger-menu.active .burger-line:nth-child(2) {
-    opacity: 0;
-}
-
-.burger-menu.active .burger-line:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
-
-/* Mobile Navigation */
-.nav-menu.mobile-active {
-    display: flex !important;
-    flex-direction: column;
-    position: fixed;
-    top: 70px;
-    left: 0;
-    right: 0;
-    background: #333;
-    padding: 2rem;
-    gap: 1rem;
-    z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.nav-menu.mobile-active li {
-    margin: 0;
-}
-
-.nav-menu.mobile-active a {
-    display: block;
-    padding: 1rem;
-    text-align: center;
-    border-radius: 8px;
-    font-size: 1.1rem;
-}
-
 /* Hero Section */
 .hero {
     position: relative;
@@ -616,19 +559,6 @@ body {
         display: none;
     }
     
-    .burger-menu {
-        display: flex;
-    }
-    
-    .language-toggle {
-        display: none;
-    }
-    
-    .nav-container {
-        padding: 0 15px;
-        height: 60px;
-    }
-    
     .logo h1 {
         font-size: 1rem;
     }
@@ -675,32 +605,12 @@ body {
 }
 
 @media (max-width: 480px) {
-    body {
-        overflow-x: hidden;
-    }
-    
     .container {
         padding: 0 15px;
     }
     
-    .nav-container {
-        padding: 0 15px;
-        height: 60px;
-    }
-    
     .logo h1 {
-        font-size: 0.9rem;
-        line-height: 1.2;
-    }
-    
-    .language-toggle {
-        padding: 2px;
-    }
-    
-    .lang-btn {
-        padding: 6px 12px;
-        font-size: 0.8rem;
-        min-width: 35px;
+        font-size: 1rem;
     }
     
     .hero {

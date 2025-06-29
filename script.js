@@ -156,38 +156,36 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Mobile menu toggle
-    function initBurgerMenu() {
-        const burgerMenu = document.querySelector('.burger-menu');
-        const navMenu = document.querySelector('.nav-menu');
+    // Mobile menu toggle (if needed in the future)
+    function createMobileMenu() {
+        const nav = document.querySelector('.nav-container');
+        const mobileMenuButton = document.createElement('button');
+        mobileMenuButton.className = 'mobile-menu-button';
+        mobileMenuButton.innerHTML = '☰';
+        mobileMenuButton.style.display = 'none';
         
-        if (burgerMenu && navMenu) {
-            burgerMenu.addEventListener('click', function() {
-                burgerMenu.classList.toggle('active');
-                navMenu.classList.toggle('mobile-active');
-            });
-            
-            // Close menu when clicking on a link
-            const navLinks = navMenu.querySelectorAll('a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    burgerMenu.classList.remove('active');
-                    navMenu.classList.remove('mobile-active');
-                });
-            });
-            
-            // Close menu when clicking outside
-            document.addEventListener('click', function(e) {
-                if (!burgerMenu.contains(e.target) && !navMenu.contains(e.target)) {
-                    burgerMenu.classList.remove('active');
-                    navMenu.classList.remove('mobile-active');
-                }
-            });
+        mobileMenuButton.addEventListener('click', function() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('active');
+        });
+        
+        nav.appendChild(mobileMenuButton);
+        
+        // Show mobile menu button on small screens
+        function checkScreenSize() {
+            if (window.innerWidth <= 768) {
+                mobileMenuButton.style.display = 'block';
+            } else {
+                mobileMenuButton.style.display = 'none';
+                document.querySelector('.nav-menu').classList.remove('active');
+            }
         }
+        
+        window.addEventListener('resize', checkScreenSize);
+        checkScreenSize();
     }
     
-    // Initialize burger menu
-    initBurgerMenu();
+    createMobileMenu();
 });
 
 // Add some CSS for mobile menu
