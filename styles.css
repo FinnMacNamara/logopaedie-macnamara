@@ -658,6 +658,42 @@ body {
     .about h2 {
         font-size: 1.1rem;
     }
+    .timeline {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .timeline::before {
+        left: 20px;
+        width: 2px;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        transform: none;
+    }
+    .timeline-item {
+        flex-direction: column !important;
+        align-items: flex-start;
+        margin-bottom: 2rem;
+        padding-left: 40px;
+        position: relative;
+    }
+    .timeline-year {
+        min-width: 60px;
+        font-size: 0.8rem;
+        padding: 0.5rem 1rem;
+        margin-bottom: 0.5rem;
+        margin-left: -40px;
+        text-align: left;
+    }
+    .timeline-content {
+        margin: 0;
+        padding: 1rem;
+        border-radius: 10px;
+        font-size: 0.85rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
     .timeline-content h3 {
         font-size: 0.9rem;
     }
@@ -671,17 +707,11 @@ body {
     .service-card {
         padding: 1.5rem;
     }
-    
-    .timeline-content {
-        padding: 1.5rem;
-    }
-    
     .contact-item {
         padding: 1.5rem;
         flex-direction: column;
         text-align: center;
     }
-    
     .contact-icon {
         min-width: auto;
     }
