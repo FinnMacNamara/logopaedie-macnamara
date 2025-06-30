@@ -560,15 +560,24 @@ body {
     }
     
     .logo h1 {
-        font-size: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .lang-btn {
+        font-size: 0.8rem;
+        padding: 6px 10px;
     }
     
     .hero-content h2 {
-        font-size: 2.5rem;
+        font-size: 2.1rem;
     }
     
     .hero-subtitle {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
     }
     
     .services-grid {
@@ -610,7 +619,12 @@ body {
     }
     
     .logo h1 {
-        font-size: 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .lang-btn {
+        font-size: 0.7rem;
+        padding: 5px 8px;
     }
     
     .hero {
@@ -618,11 +632,15 @@ body {
     }
     
     .hero-content h2 {
-        font-size: 2rem;
+        font-size: 1.3rem;
     }
     
     .hero-subtitle {
-        font-size: 1.1rem;
+        font-size: 0.95rem;
+    }
+    
+    .hero-content p {
+        font-size: 0.9rem;
     }
     
     .service-card {
