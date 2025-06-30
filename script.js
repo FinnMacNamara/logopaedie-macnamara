@@ -186,6 +186,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     createMobileMenu();
+
+    const burger = document.querySelector('.burger');
+    const navMenu = document.querySelector('.nav-menu');
+    const navLinks = document.querySelectorAll('.nav-menu a');
+
+    if (burger && navMenu) {
+        burger.addEventListener('click', function() {
+            const expanded = burger.getAttribute('aria-expanded') === 'true';
+            burger.setAttribute('aria-expanded', !expanded);
+            navMenu.classList.toggle('active');
+        });
+    }
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+            burger.setAttribute('aria-expanded', 'false');
+        });
+    });
 });
 
 // Add some CSS for mobile menu
