@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Language switching functionality
     function initLanguageToggle() {
         const langButtons = document.querySelectorAll('.lang-btn');
+        console.log('Language toggle initialized. Found buttons:', langButtons.length);
         let currentLang = 'de';
         
         function switchLanguage(lang) {
@@ -154,55 +155,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (img.complete) {
             console.log('Image already loaded:', img.src);
         }
-    });
-
-    // Mobile menu toggle (if needed in the future)
-    function createMobileMenu() {
-        const nav = document.querySelector('.nav-container');
-        const mobileMenuButton = document.createElement('button');
-        mobileMenuButton.className = 'mobile-menu-button';
-        mobileMenuButton.innerHTML = '☰';
-        mobileMenuButton.style.display = 'none';
-        
-        mobileMenuButton.addEventListener('click', function() {
-            const navMenu = document.querySelector('.nav-menu');
-            navMenu.classList.toggle('active');
-        });
-        
-        nav.appendChild(mobileMenuButton);
-        
-        // Show mobile menu button on small screens
-        function checkScreenSize() {
-            if (window.innerWidth <= 768) {
-                mobileMenuButton.style.display = 'block';
-            } else {
-                mobileMenuButton.style.display = 'none';
-                document.querySelector('.nav-menu').classList.remove('active');
-            }
-        }
-        
-        window.addEventListener('resize', checkScreenSize);
-        checkScreenSize();
-    }
-    
-    createMobileMenu();
-
-    const burger = document.querySelector('.burger');
-    const navMenu = document.querySelector('.nav-menu');
-    const navLinks = document.querySelectorAll('.nav-menu a');
-
-    if (burger && navMenu) {
-        burger.addEventListener('click', function() {
-            const expanded = burger.getAttribute('aria-expanded') === 'true';
-            burger.setAttribute('aria-expanded', !expanded);
-            navMenu.classList.toggle('active');
-        });
-    }
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            navMenu.classList.remove('active');
-            burger.setAttribute('aria-expanded', 'false');
-        });
     });
 });
 
