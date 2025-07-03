@@ -69,8 +69,8 @@ document.addEventListener('DOMContentLoaded', function() {
             slides[currentSlide].classList.add('active');
         }
         
-        // Start slideshow - change slide every 5 seconds
-        setInterval(nextSlide, 5000);
+        // Start slideshow - change slide every 10 seconds
+        setInterval(nextSlide, 10000);
         
         // Ensure first slide is visible initially
         if (slides.length > 0) {
